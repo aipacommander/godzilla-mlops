@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  vision_api:
+    container_name: "vision_api"
+    image: python:3.9.7
+    volumes:
+      - .:/app
+    networks:
+      - local-net
+
+# コンテナ間で通信を行うためのネットワークブリッジ
+networks:
+  local-net:
+    driver: bridge
